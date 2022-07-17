@@ -1,0 +1,82 @@
+:root {
+  --mediumTurqoise: #2DCEEF;
+  --bleuDeFrance: #2D9BEF;
+  --jasminePurple: #9B2DEF;
+  --white: #ffffff;
+  --quilGray: #D5D5D5;
+  --startDust: #99999F;
+  --charcoalGray: #424346;
+  --iridium: #3A3A3D;
+  --thunder: #303033;
+  --rangoonGreen: #161A1A;
+
+  --fontLato: "https://fonts.google.com/specimen/Lato";
+  --fontPoppins: "https://fonts.google.com/specimen/Poppins";
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app__flex {
+  display: flex;
+}
+
+.section {
+  width: 100vw;
+  position: relative;
+  min-height: 100vh;
+  opacity: .9;
+  background-image: url("../assets/images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.blur{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(49, 47, 47, 0.71);
+  z-index: 0;
+}
+
+.center {  
+  justify-content: center;
+  align-items: center;
+}
+
+.card-form{
+  background-color: var(--white);
+  padding: 1rem ;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.app__navbar-mobile{
+  display: none;
+  transition: all 3s ease;
+}
+
+@media screen and (max-width: 900px) {
+  .app__navbar-mobile{
+    display: block !important;
+  }
+}
+
