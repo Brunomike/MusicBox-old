@@ -42,8 +42,7 @@ a {
 .section {
   width: 100vw;
   position: relative;  
-  opacity: .9;
-  overflow: hidden;
+  opacity: .9;  
 }
 
 .main_background{
