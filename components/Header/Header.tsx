@@ -14,7 +14,10 @@ export default function Header() {
     }
     return (
         <header className={styles.header}>
-            <Image src={Logo} alt="Musicbox" className={styles.logo} width={100} height={45} />
+            <Link href="/">
+                {/* <Image src={Logo} alt="Musicbox" className={styles.logo} width={100} height={45} /> */}
+                <Image src={Logo} alt="Musicbox" className="hover:cursor-pointer" width={100} height={45} />
+            </Link>
             <nav className={styles.navLinks}>
                 <ul>
                     <li>
@@ -25,10 +28,14 @@ export default function Header() {
                         <a href="#">Help</a>
                     </li>
                     <li >
+                        <Link href="/signin">
                         <a href="#" className={`${styles.btn} ${styles.login}`}>Log in</a>
+                        </Link>
                     </li>
                     <li >
-                        <a href="#" className={`${styles.btn} ${styles.signup}`}>Sign up</a>
+                    <Link href="/signup">
+                        <a href="" className={`${styles.btn} ${styles.signup}`}>Sign up</a>
+                        </Link>
                     </li>
                 </ul>
             </nav>

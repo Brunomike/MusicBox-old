@@ -14,6 +14,10 @@
   --fontPoppins: "https://fonts.google.com/specimen/Poppins";
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -37,14 +41,20 @@ a {
 
 .section {
   width: 100vw;
-  position: relative;
-  min-height: 100vh;
+  position: relative;  
   opacity: .9;
-  background-image: url("../assets/images/background.jpg");
+  overflow: hidden;
+}
+
+.main_background{
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/images/background.jpg");  
+  background-repeat: no-repeat;  
   background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
+  position: fixed;
+  z-index: 1;
 }
 
 .blur{
