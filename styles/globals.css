@@ -18,6 +18,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   padding: 0;
@@ -35,10 +39,6 @@ a {
   box-sizing: border-box;
 }
 
-.app__flex {
-  display: flex;
-}
-
 .section {
   width: 100vw;
   position: relative;  
@@ -53,6 +53,17 @@ a {
   background-position: center;
   background-size: cover;
   position: fixed;
+  z-index: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.listen_bg{  
+  width: 100%; 
+  background-image: url("../assets/images/listen_anytime.png");  
+  background-repeat: no-repeat;  
+  background-position: center;
+  background-size: cover;  
   z-index: 1;
 }
 
@@ -83,9 +94,56 @@ a {
   transition: all 3s ease;
 }
 
+.app_flex_col{
+  display: flex;
+  flex-direction: column;
+}
+
+
 @media screen and (max-width: 900px) {
   .app__navbar-mobile{
     display: block !important;
   }
+
+  
+}
+@media screen and (max-width: 414px) {  
+  .app_sm{
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    width: 100%;    
+    padding: 0 16px;
+  }
+  .app_sm_even{
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 16px;
+    align-items: center;
+    width: 100%;    
+    padding: 0 16px;
+  }
+
+  .app_sm_center{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;    
+    width: 100%;    
+    padding: 0 16px;
+  }
+  .text_sm{
+    width: 90%;
+    margin: 0;
+  }
+  .app_flex{
+    display: flex;    
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+
 }
 

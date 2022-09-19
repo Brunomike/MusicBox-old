@@ -13,7 +13,7 @@ export default function Header() {
         setIsOpen(!isOpen)
     }
     return (
-        <header className='flex justify-around items-center bg-black h-16 absolute top-0 left-0 w-screen z-12 text-white font-bold'>
+        <header className='flex justify-around items-center bg-black h-16 absolute top-0 left-0 w-screen z-10 text-white font-bold'>
             <Link href="/">                
                 <Image src={Logo} alt="Musicbox" className="hover:cursor-pointer" width={100} height={45} />
             </Link>

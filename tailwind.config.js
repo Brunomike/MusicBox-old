@@ -26,5 +26,3 @@ module.exports = {
   },
   plugins: [],
 };
-
-//#2DCEEF
