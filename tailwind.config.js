@@ -12,15 +12,18 @@ module.exports = {
         'bluish_1': '#35EDFB'
       },
       backgroundImage: theme => ({
-        'phone_finder': "url('/assets/images/phone_finder.png')",        
+        'phone_finder': "url('/assets/images/phone_finder.png')",
       }),
-      screens:{
-        'xs':'280px',
-        'sm':'640px',
-        'md':'768px',
-        'lg':'1024px',
-        'xl':'1280px',
-        '2xl':'1536px',
+      screens: {
+        // 'xs': '280px',
+        // 'sm': '480px',
+        // 'md': '768px',
+        // 'lg': '976px',
+        // 'xl': '1440px',
+        sm:'480px',
+        md:'768px',
+        lg:'976px',
+        xl:'1440px',
       }
     },
   },

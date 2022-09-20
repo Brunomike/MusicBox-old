@@ -116,6 +116,23 @@ a {
     width: 100%;    
     padding: 0 16px;
   }
+  .app_sm_baseline{
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: baseline;
+    width: 100%;    
+    padding: 0 16px;
+  }
+
+  .app_sm_grow{
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: left;
+    width: 100%;    
+    padding: 0 16px;
+  }
   .app_sm_even{
     flex-direction: column;
     justify-content: space-evenly;
@@ -140,9 +157,14 @@ a {
   .app_flex{
     display: flex;    
     flex-direction: row;
-    gap: 8px;
+    gap: 16px;
     justify-content: center;
     align-items: center;
+  }
+
+  .header_sm{
+    justify-content: space-between;
+    padding: 0 16px;
   }
 
 }

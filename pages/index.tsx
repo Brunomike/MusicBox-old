@@ -29,7 +29,7 @@ const Home: NextPage = () => {
       </Head>
       <Header />
 
-      {/* <main className="w-full h-full"> */}
+      {/* Section One: Open the world of music */}
       <section className='w-full h-full flex flex-col justify-center items-center gap-12 mx-auto my-0 text-center bg-black/50 '>
         <div className='flex items-center w-fit'>
           <h1 className='text-4xl font-bold text-white'>Open the world of muisc. <br />It's all here.</h1>
@@ -43,6 +43,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
+      {/* Section One: FLOW*/}
       <section className='w-full h-full flex  justify-center items-center gap-12 mx-auto my-0 text-center z-1 px-32 xs:px-8 bg-slate-900 app_sm_even'>
         <div>
           <Image src={PhoneFinder} alt="Musicbox" width={360} height={400} />
@@ -59,11 +60,13 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className='w-full h-full md:flex xs:flex-col  justify-center items-left pl-32 gap-6  bg-slate-900 listen_bg app_sm_center'>
+{/* Section One: Listen anytime, anywhere */}
+      <section className='w-full h-full flex md:flex-col  justify-center items-left pl-32 gap-6  bg-slate-900 listen_bg app_sm_center'>
         <h2 className='text-3xl text-white font-bold text-left'>Listen anytime, anywhere</h2>
         <p className='text-white text-left w-1/3 text_sm'>All your favorite songs and episodes are always available - even without WiFi or LTE.</p>
       </section>
 
+{/* Section One: Find the music you want */}
       <section className='w-full h-full flex justify-center items-center mx-auto my-0 gap-6 px-32  bg-slate-900 app_sm_even'>
         <div className='flex-col'>
           <h2 className='text-3xl text-white font-bold text-left'>Find the music you want </h2>
@@ -73,10 +76,12 @@ const Home: NextPage = () => {
         </div>
         <Image src={FindImage} alt="Musicbox" />
       </section>
-      <section className='w-full  md:flex xs:flex-col  justify-center items-center gap-12 mx-auto my-0 text-center px-32 xs:px-8 bg-slate-900 py-8'>
+
+      {/* Section One: Why go premium */}
+      <section className='w-full  md:flex sm:flex-col  justify-center items-center gap-12 mx-auto my-0 text-center px-8 md:px-32 bg-slate-900 py-8'>
         <h1 className='text-3xl text-white font-bold text-center mb-4'>Why go premium?</h1>
 
-        <div className='flex gap-8 app_sm'>
+        <div className='flex gap-8 app_sm_baseline sm:items-baseline'>
           <div className='flex-col justify-center items-center  app_flex'>
             <div className='p-4 rounded-full bg-gray-700 w-16 h-16'>
               <Image src={OfflineImage} alt="Musicbox" width={35} height={43} />
@@ -86,7 +91,7 @@ const Home: NextPage = () => {
               <p className='text-gray-700'>Save and listen anywhere.</p>
             </div>
           </div>
-          <div className='flex-col items-center justify-center app_flex'>
+          <div className='flex-col justify-center items-center  app_flex'>
             <div className='p-4 rounded-full bg-gray-700 w-16 h-16'>
               <Image src={Hq} alt="Musicbox" width={35} height={45} />
             </div>
@@ -95,7 +100,7 @@ const Home: NextPage = () => {
               <p className='text-gray-700'>Enjoy the full range of sound.</p>
             </div>
           </div>
-          <div className='flex-col items-center justify-center app_flex'>
+          <div className='flex-col justify-center items-center  app_flex'>
             <div className='p-4 rounded-full bg-gray-700 w-16 h-16'>
               <Image src={NoAds} alt="Musicbox" width={53} height={52} />
             </div>
@@ -104,7 +109,7 @@ const Home: NextPage = () => {
               <p className='text-gray-700'>Enjoy nonstop music.</p>
             </div>
           </div>
-          <div className='flex-col items-center justify-center app_flex'>
+          <div className='flex-col justify-center items-center  app_flex'>
             <div className='p-4 rounded-full bg-gray-700 w-16 h-16'>
               <Image src={UnlimitedSkips} alt="Musicbox" width={35} height={35} />
             </div>
@@ -130,7 +135,7 @@ const Home: NextPage = () => {
                 <p className='text-white'>✔ 30 skips per day</p>
               </div>
             </div>
-            <button className='mt-6 px-4 border-2 border-white rounded-full text-white text-1xl font-bold h-9'>GET MUSICBOX FREE</button>
+            <a href="#" className='inline-block mt-6 px-4 border-2 border-white rounded-full text-white text-1xl font-bold h-9 pt-1'>GET MUSICBOX FREE</a>
           </div>
 
           <div className='flex-col' id='premium'>
@@ -148,16 +153,17 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* <button className='mt-6 px-4 border-2 border-white rounded-full text-white font-bold'>GET MUSICBOX PREMIUM</button> */}
-            <button className='mt-6 rounded-full bg-gradient-to-r from-bluish_1 to-purple_1 px-4 text-1xl font-bold text-white h-9'>GET MUSICBOX PREMIUM</button>
+            <a href="#" className='inline-block mt-6 rounded-full bg-gradient-to-r from-bluish_1 to-purple_1 px-4 text-1xl font-bold text-white h-9 pt-1'>GET MUSICBOX PREMIUM</a>
           </div>
         </div>
       </section>
-      {/* </main> */}
 
-      <footer className='w-full flex-col py-4  bg-black'>
-        <div  className='flex justify-around items-center'>
+      {/* Footer */}
+      <footer className='w-full flex-col py-4 bg-black '>
+        <div className='md:flex sm:flex-col justify-around items-center  px-8'>
           <Image src={MusicBox} alt='MusicBox' />
-          <div className='flex-col justify-between'>
+        <div className='flex flex-grow justify-between '>
+        <div className='w-1/2'>
             <h2 className='text-gray-500'>MUSICBOX</h2>
             <ul>
               <li className='text-white'><Link href="#">About</Link></li>
@@ -165,7 +171,7 @@ const Home: NextPage = () => {
               <li className='text-white'><Link href="#">Features</Link></li>
             </ul>
           </div>
-          <div>
+          <div className='w-1/2'>
             <h2 className='text-gray-500'>COMMUNITIES</h2>
             <ul>
               <li className='text-white '><Link href="#">For Artists</Link></li>
@@ -173,7 +179,7 @@ const Home: NextPage = () => {
               <li className='text-white '><Link href="#">Press</Link></li>
             </ul>
           </div>
-          <div>
+          <div className=''>
             <h2 className='text-gray-500'>USEFUL LINKS</h2>
             <ul>
               <li className='text-white'><Link href="#">Help</Link></li>
@@ -182,6 +188,7 @@ const Home: NextPage = () => {
               <li className='text-white'><Link href="#">Download App</Link></li>
             </ul>
           </div>
+        </div>
 
           <div className='flex justify-between gap-4 items-center'>
             <div className='p-4 rounded-full bg-gray-700 w-12 h-12'>
@@ -193,25 +200,25 @@ const Home: NextPage = () => {
             <div className='p-4 rounded-full bg-gray-700 w-12 h-12'>
               <a href={""} ><Image src={Instagram} alt='Facebook' width={35} height={35} /></a>
             </div>
-           
+
           </div>
         </div>
         <div className='flex justify-around  mt-8'>
-            <div>
-              <ul className='flex justify-between gap-4 items-center'>
-                <li className='text-gray-700'><a href="">Legal</a></li>
-                <li className='text-gray-700'><a href="">Privacy</a></li>
-                <li className='text-gray-700'><a href="">Cookies</a></li>
-                <li className='text-gray-700'><a href="">Ads</a></li>
-              </ul>
-            </div>
-            <div className='flex-col gap-4'>
-              <select name="" id=""  defaultValue={"us"} className='block mb-2 bg-black text-white'>
-                <option value="us">English (us)</option>
-                <option value="us">English (uk)</option>
-              </select>
-              <span className='text-gray-700 '>&copy;2022 MusicBox</span>
-            </div>
+          <div>
+            <ul className='flex justify-between gap-4 items-center'>
+              <li className='text-gray-700'><a href="">Legal</a></li>
+              <li className='text-gray-700'><a href="">Privacy</a></li>
+              <li className='text-gray-700'><a href="">Cookies</a></li>
+              <li className='text-gray-700'><a href="">Ads</a></li>
+            </ul>
+          </div>
+          <div className='flex-col gap-4'>
+            <select name="" id="" defaultValue={"us"} className='block mb-2 bg-black text-white'>
+              <option value="us">English (us)</option>
+              <option value="us">English (uk)</option>
+            </select>
+            <span className='text-gray-700 '>&copy;2022 MusicBox</span>
+          </div>
         </div>
       </footer>
     </div>
