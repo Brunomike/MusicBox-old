@@ -9,7 +9,8 @@ module.exports = {
       colors: {
         'bluish': '#2DCEEF',
         'purple_1': '#9B2DEF',
-        'bluish_1': '#35EDFB'
+        'bluish_1': '#35EDFB',
+        'blue_fb':'#4267B2'
       },
       backgroundImage: theme => ({
         'phone_finder': "url('/assets/images/phone_finder.png')",

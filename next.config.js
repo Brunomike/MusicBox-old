@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  env: {
+    apiUrl: "http://localhost:8080"
+  }
 }
 
 module.exports = {
