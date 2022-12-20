@@ -6,7 +6,6 @@ import Link from 'next/link'
 import PhoneFinder from '../assets/images/phone_finder.png'
 import MusicBox from '../assets/svg/musicbox.svg'
 import FlowIcon from '../assets/images/flow_icon.png'
-import ListenAnytime from '../assets/images/listen_anytime.png'
 import FindImage from '../assets/images/mask_group.png'
 import OfflineImage from '../assets/images/offline.png'
 import Hq from '../assets/images/hq.png'
@@ -17,7 +16,6 @@ import Twitter from '../assets/svg/twitter.svg'
 import Instagram from '../assets/svg/instagram.svg'
 
 import Header from '../components/Header/Header'
-import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   return (

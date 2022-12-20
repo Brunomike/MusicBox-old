@@ -1,18 +1,13 @@
 import type { NextPage } from 'next';
 import { useState } from 'react';
-import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { FcGoogle } from 'react-icons/fc';
 import { ImFacebook } from 'react-icons/im';
-import FormGroup from '@mui/material/FormGroup';
 import { FormControl, InputLabel, Select, MenuItem, TextField } from '@mui/material';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 import Head from 'next/head'
 import Link from 'next/link'
-import Script from 'next/script'
 import Header from '../components/Header/Header'
-import { ChangeEvent } from 'react';
-
 
 var clientId = "me"
 
@@ -91,24 +86,13 @@ const SignUp: NextPage = () => {
                         </div>
                         <ReCAPTCHA
                             sitekey={process.env.GOOGLE_RECAPTCHA_SITE_KEY!}
-                            onChange={onChange} />
-                        <button className="g-recaptcha"
-                            data-sitekey={process.env.GOOGLE_RECAPTCHA_SITE_KEY}
-                            data-callback='onSubmit'
-                            data-action='submit'>
-                            Submit
-                        </button>
-                        <Script>
-                            {/* function onSubmit(token) {
-                                document.getElementById("signUp")!.submit();
-                            } */}
-                        </Script>
+                            onChange={onChange} 
+                            className='mx-auto'/>                        
                         <p className='text-center text-sm'>
                             By clicking on "Sign up", you accept the
                             <br />
                             <span className='text-blue-500'><Link href="">Terms and Conditions of Use</Link></span>.
                         </p>
-
                         <button className="bg-blue-600 w-4/5 mx-auto text-white h-10 rounded-3xl">SIGN UP</button>
                         <p className='text-center text-sm'>Already have an Account? <span className='text-blue-500'><Link href="/signin">Log in</Link></span></p>
                     </form>
