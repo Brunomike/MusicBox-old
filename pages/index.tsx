@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import ListenAnytime from '../assets/images/listen_anytime.png';
 import PhoneFinder from '../assets/images/phone_finder.png'
 import MusicBox from '../assets/svg/musicbox.svg'
 import FlowIcon from '../assets/images/flow_icon.png'
@@ -36,7 +37,7 @@ const Home: NextPage = () => {
           <h1 className='text-4xl font-bold text-white'>Open the world of muisc. <br />It's all here.</h1>
         </div>
         <div>
-          <div className='flex app_sm gap-4'>
+          <div className='flex flex-col-reverse md:flex-row gap-6 md:gap-4 '>
             <a href='#free' className='rounded-full bg-gradient-to-r from-bluish_1 to-purple_1 px-4 text-1xl font-bold text-white h-9 pt-1'>MUSICBOX PREMIUM</a>
             <a href='#premium' className='border-2 border-white rounded-full px-4 text-1xl font-bold text-white h-9 pt-1'>MUSICBOX FREE</a>
           </div>
@@ -44,86 +45,89 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      {/* Section One: FLOW*/}
-      <section className='w-full h-full flex  justify-center items-center gap-12 mx-auto my-0 text-center z-1 px-32 xs:px-8 bg-slate-900 app_sm_even'>
-        <div>
+      {/* Section Two: FLOW*/}
+      <section className='w-full h-fit md:h-full py-6 md:py-0 flex flex-col justify-center gap-20 items-center md:flex-row bg-slate-900'>
+        <div className=''>
           <Image src={PhoneFinder} alt="Musicbox" width={360} height={400} />
         </div>
-        <div className='flex-col w-1/2 gap-4 py-4  xs:gap-8 text_sm'>
+        <div className='flex-col w-full p-4 md:p-0 md:w-1/2 gap-4 py-4 sm:gap-8'>
           <div className='flex items-center justify-start gap-4'>
             <Image src={FlowIcon} alt="FlowIcon" />
-            <h1 className='text-white'>FLOW</h1>
+            <h1 className='text-white font-bold text-xl'>FLOW</h1>
           </div>
-          <p className='text-white text-left mt-4'>Listen to a personalized mix of tracks based on your
+          <p className='text-white text-left mt-4 w-full'>Listen to a personalized mix of tracks based on your
             listening history, or create your own mix of genres, artists
             and playlists - letting you enjoy more of the music you love.
           </p>
         </div>
       </section>
 
-      {/* Section One: Listen anytime, anywhere */}
-      <section className='w-full h-full flex md:flex-col  justify-center items-left pl-32 gap-6  bg-slate-900 listen_bg app_sm_center'>
-        <h2 className='text-3xl text-white font-bold text-left'>Listen anytime, anywhere</h2>
-        <p className='text-white text-left w-1/3 text_sm'>All your favorite songs and episodes are always available - even without WiFi or LTE.</p>
+      {/* Section Three: Listen anytime, anywhere listen_bg*/}
+      <section className='w-full h-full flex flex-col-reverse md:block p-4 md:p-0 bg-slate-900 relative'>
+          <Image src={ListenAnytime} layout='fill' objectFit='contain' />
+          <div className='flex flex-col gap-4 md:absolute md:top-48 left-8 '>
+            <h2 className='text-2xl md:text-3xl text-white font-bold text-left'>Listen anytime, anywhere</h2>
+            <p className='text-white text-left w-full md:w-2/3 text-sm md:text-base'>All your favorite songs and episodes are always available - even without WiFi or LTE.</p>
+          </div>
       </section>
 
-      {/* Section One: Find the music you want */}
-      <section className='w-full h-full flex justify-center items-center mx-auto my-0 gap-6 px-32  bg-slate-900 app_sm_even'>
-        <div className='flex-col'>
+      {/* Section Four: Find the music you want */}
+      <section className='w-full h-auto flex flex-col-reverse md:flex-row justify-center items-center mx-auto my-0 gap-6 p-4 md:px-32 bg-slate-900 pb-12'>
+        <div >
           <h2 className='text-3xl text-white font-bold text-left'>Find the music you want </h2>
-          <p className='text-white text-left w-1/2 mt-4 text_sm'>Search for your favorite songs using the description,
+          <p className='text-white text-left w-full md:w-1/2 mt-4 '>Search for your favorite songs using the description,
             or turn on the <span className='text-bluish'>MusicFinder</span> feature to find the song
             that is playing near you.</p>
         </div>
-        <Image src={FindImage} alt="Musicbox" />
+        <Image src={FindImage} alt="Musicbox" objectFit='cover' />
       </section>
 
-      {/* Section One: Why go premium */}
+      {/* Section Five: Why go premium */}
       <section className='w-full  md:flex sm:flex-col  justify-center items-center gap-12 mx-auto my-0 text-center px-8 md:px-32 bg-slate-900 py-8'>
         <h1 className='text-3xl text-white font-bold text-center mb-4'>Why go premium?</h1>
 
-        <div className='flex gap-8 app_sm_baseline sm:items-baseline'>
-          <div className='flex-col justify-center items-center  app_flex'>
-            <div className='p-4 rounded-full bg-gray-700 w-16 h-16'>
+        <div className='flex flex-col md:flex-row gap-8'>
+          <div className='flex flex-row md:flex-col gap-4 justify-start items-center '>
+            <div className='p-2 md:p-4 rounded-full bg-gray-700 w-14 h-14 md:w-16 md:h-16'>
               <Image src={OfflineImage} alt="Musicbox" width={35} height={43} />
             </div>
             <div className='text-left'>
-              <h4 className='text-white font-bold'>Offline mode.</h4>
+              <h4 className='text-left md:text-center text-white font-bold'>Offline mode.</h4>
               <p className='text-gray-700'>Save and listen anywhere.</p>
             </div>
           </div>
-          <div className='flex-col justify-center items-center  app_flex'>
-            <div className='p-4 rounded-full bg-gray-700 w-16 h-16'>
+          <div className='flex flex-row md:flex-col gap-4 justify-start items-center '>
+            <div className='p-2 md:p-4 rounded-full bg-gray-700 w-14 h-14 md:w-16 md:h-16'>
               <Image src={Hq} alt="Musicbox" width={35} height={45} />
             </div>
             <div className='text-left'>
-              <h4 className='text-white font-bold'>High quality audio.</h4>
+              <h4 className='text-left md:text-center text-white font-bold'>High quality audio.</h4>
               <p className='text-gray-700'>Enjoy the full range of sound.</p>
             </div>
           </div>
-          <div className='flex-col justify-center items-center  app_flex'>
-            <div className='p-4 rounded-full bg-gray-700 w-16 h-16'>
+          <div className='flex flex-row md:flex-col gap-4 justify-start items-center '>
+            <div className='p-2 md:p-4 rounded-full bg-gray-700 w-14 h-14 md:w-16 md:h-16'>
               <Image src={NoAds} alt="Musicbox" width={53} height={52} />
             </div>
             <div className='text-left'>
-              <h4 className='text-white font-bold'>No ads.</h4>
+              <h4 className='text-left md:text-center text-white font-bold'>No ads.</h4>
               <p className='text-gray-700'>Enjoy nonstop music.</p>
             </div>
           </div>
-          <div className='flex-col justify-center items-center  app_flex'>
-            <div className='p-4 rounded-full bg-gray-700 w-16 h-16'>
+          <div className='flex flex-row md:flex-col gap-4 justify-start items-center '>
+            <div className='p-2 md:p-4 rounded-full bg-gray-700 w-14 h-14 md:w-16 md:h-16'>
               <Image src={UnlimitedSkips} alt="Musicbox" width={35} height={35} />
             </div>
             <div className='text-left'>
-              <h4 className='text-white font-bold'>Unlimited skips.</h4>
+              <h4 className='text-left md:text-center text-white font-bold'>Unlimited skips.</h4>
               <p className='text-gray-700'>Just tap skip.</p>
             </div>
           </div>
         </div>
         <h4 className='text-gray-700 mt-4'>Listen free or subscribe to MusicBox Premium.</h4>
 
-        <div className='flex gap-8 app_sm mt-12'>
-          <div className='flex-col justify-center items-center' id='free'>
+        <div className='flex flex-col md:flex-row gap-8 mt-12'>
+          <div className='flex-col justify-center items-center mx-auto' id='free'>
             <div className='flex-col border-2 border-white text-left rounded-md p-8 w-64 h-64'>
               <div >
                 <h4 className='text-white'>MusicBox Free</h4>
@@ -139,7 +143,7 @@ const Home: NextPage = () => {
             <a href="#" className='inline-block mt-6 px-4 border-2 border-white rounded-full text-white text-1xl font-bold h-9 pt-1'>GET MUSICBOX FREE</a>
           </div>
 
-          <div className='flex-col' id='premium'>
+          <div className='flex-col justify-center items-center mx-auto' id='premium'>
             <div className='flex-col border-2 border-l-bluish_1 border-t-bluish_1/60 border-r-purple_1/50 border-gradient-to-r from-bluish_1 to-purple_1 text-left rounded-md p-8 w-64 h-64'>
               <div >
                 <h4 className='text-white'>MusicBox Free</h4>
@@ -161,64 +165,67 @@ const Home: NextPage = () => {
 
       {/* Footer */}
       <footer className='w-full flex-col py-4 bg-black '>
-        <div className='md:flex sm:flex-col justify-around items-center  px-8'>
-          <Image src={MusicBox} alt='MusicBox' />
-          <div className='flex flex-grow justify-between '>
-            <div className='w-1/2'>
-              <h2 className='text-gray-500'>MUSICBOX</h2>
-              <ul>
-                <li className='text-white'><Link href="#">About</Link></li>
-                <li className='text-white'><Link href="#">Premium</Link></li>
-                <li className='text-white'><Link href="#">Features</Link></li>
+        <div className='w-full md:w-4/5 flex flex-col gap-4 md:gap-16 md:flex-row md:justify-between items-center mx-auto px-8'>
+          <div className='w-full md:w-auto flex justity-start '><Image src={MusicBox} alt='MusicBox' width={132} height={60} /></div>
+          <div className='w-full md:w-4/5 flex flex-row gap-y-4 flex-wrap md:flex-nowrap  md:justify-between '>
+            <div className='w-1/2 '>
+              <h2 className='text-gray-500 text-sm'>MUSICBOX</h2>
+              <ul className='flex flex-col gap-1'>
+                <li className='text-white text-sm'><Link href="#">About</Link></li>
+                <li className='text-white text-sm'><Link href="#">Premium</Link></li>
+                <li className='text-white text-sm'><Link href="#">Features</Link></li>
               </ul>
             </div>
             <div className='w-1/2'>
-              <h2 className='text-gray-500'>COMMUNITIES</h2>
-              <ul>
-                <li className='text-white '><Link href="#">For Artists</Link></li>
-                <li className='text-white '><Link href="#">Developers</Link></li>
-                <li className='text-white '><Link href="#">Press</Link></li>
+              <h2 className='text-gray-500 text-sm'>COMMUNITIES</h2>
+              <ul className='flex flex-col gap-1'>
+                <li className='text-white text-sm'><Link href="#">For Artists</Link></li>
+                <li className='text-white text-sm'><Link href="#">Developers</Link></li>
+                <li className='text-white text-sm'><Link href="#">Press</Link></li>
               </ul>
             </div>
-            <div className=''>
-              <h2 className='text-gray-500'>USEFUL LINKS</h2>
-              <ul>
-                <li className='text-white'><Link href="#">Help</Link></li>
-                <li className='text-white'><Link href="#">Web Player</Link></li>
-                <li className='text-white'><Link href="#">Explore Channels</Link></li>
-                <li className='text-white'><Link href="#">Download App</Link></li>
+            <div className='w-1/2'>
+              <h2 className='text-gray-500 text-sm'>USEFUL LINKS</h2>
+              <ul className='flex flex-col gap-1'>
+                <li className='text-white text-sm'><Link href="#">Help</Link></li>
+                <li className='text-white text-sm'><Link href="#">Web Player</Link></li>
+                <li className='text-white text-sm'><Link href="#">Explore Channels</Link></li>
+                <li className='text-white text-sm'><Link href="#">Download App</Link></li>
               </ul>
             </div>
           </div>
 
-          <div className='flex justify-between gap-4 items-center'>
-            <div className='p-4 rounded-full bg-gray-700 w-12 h-12'>
-              <a href={""} ><Image src={Facebook} alt='Facebook' width={35} height={35} /></a>
-            </div>
-            <div className='p-4 rounded-full bg-gray-700 w-12 h-12'>
-              <a href={""} ><Image src={Twitter} alt='Facebook' width={35} height={35} /></a>
-            </div>
-            <div className='p-4 rounded-full bg-gray-700 w-12 h-12'>
-              <a href={""} ><Image src={Instagram} alt='Facebook' width={35} height={35} /></a>
-            </div>
+          <div className='w-full md:w-auto flex flex-row md:flex-col h-full justify-between items-end md:gap-16'>
+            <div className='flex justify-between gap-4 items-center'>
+              <div className='rounded-full bg-gray-700 w-8 h-8 flex justify-center items-center'>
+                <a href={""}><Image src={Facebook} alt='Facebook' width={14} height={14} /></a>
+              </div>
+              <div className='rounded-full bg-gray-700 w-8 h-8 flex justify-center items-center'>
+                <a href={""} ><Image src={Twitter} alt='Facebook' width={14} height={14} /></a>
+              </div>
+              <div className='rounded-full bg-gray-700 w-8 h-8 flex justify-center items-center'>
+                <a href={""} ><Image src={Instagram} alt='Facebook' width={14} height={14} /></a>
+              </div>
 
-          </div>
-        </div>
-        <div className='flex justify-around  mt-8'>
-          <div>
-            <ul className='flex justify-between gap-4 items-center'>
-              <li className='text-gray-700'><a href="">Legal</a></li>
-              <li className='text-gray-700'><a href="">Privacy</a></li>
-              <li className='text-gray-700'><a href="">Cookies</a></li>
-              <li className='text-gray-700'><a href="">Ads</a></li>
-            </ul>
-          </div>
-          <div className='flex-col gap-4'>
-            <select name="" id="" defaultValue={"us"} className='block mb-2 bg-black text-white'>
+            </div>
+            <select name="" id="" defaultValue={"us"} className='mb-2 bg-black text-white text-sm'>
               <option value="us">English (us)</option>
               <option value="us">English (uk)</option>
             </select>
-            <span className='text-gray-700 '>&copy;2022 MusicBox</span>
+          </div>
+
+        </div>
+        <div className='w-full md:w-4/5 mx-auto flex justify-between mt-8 px-2 md:px-0'>
+          <div>
+            <ul className='flex justify-between gap-4 items-center'>
+              <li className='text-gray-700 text-sm'><a href="">Legal</a></li>
+              <li className='text-gray-700 text-sm'><a href="">Privacy</a></li>
+              <li className='text-gray-700 text-sm'><a href="">Cookies</a></li>
+              <li className='text-gray-700 text-sm'><a href="">Ads</a></li>
+            </ul>
+          </div>
+          <div className='flex-col gap-4'>
+            <span className='text-gray-700 text-sm'>&copy;2022 MusicBox</span>
           </div>
         </div>
       </footer>

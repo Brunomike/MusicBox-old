@@ -46,7 +46,7 @@ const SignUp: NextPage = () => {
 
             <section className='app__flex section main_background center'>
                 <Header />
-                <div className="blur "></div>
+                <div className="blur"></div>
                 <div className='card-form  flex flex-col gap-2 relative w-4/5 md:w-5/12 mx-auto mt-28 mb-20'>
                     <h1 className='text-2xl text-center bold font-bold my-2'>Ready to sign up?</h1>
                     <div className="flex justify-center flex-col sm:flex-row items-center gap-4 mb-3" onClick={signUpWithGoogle}>
@@ -62,13 +62,20 @@ const SignUp: NextPage = () => {
                     </div>
 
                     <form id='signUp' className='w-4/5 mx-auto z-10 flex flex-col gap-4'>
-                        <TextField id="outlined-basic" label="Email Address" variant="outlined" name='email' onChange={handleChange} />
-                        <TextField id="outlined-basic" label="Password" variant="outlined" name='password' />
-                        <TextField id="outlined-basic" label="Username" variant="outlined" name='username' />
+                        <TextField id="outlined-basic" label="Email Address" variant="outlined" name='email' onChange={handleChange} type="email" />
+                        <TextField id="outlined-basic" label="Password" variant="outlined" name='password' type="password" />
+                        <TextField id="outlined-basic" label="Username" variant="outlined" name='username' type="text" />
                         <div className="flex justify-center items-center gap-6">
                             <FormControl className='w-6/12'>
-                                <InputLabel id="demo-simple-select-label">Date of Birth</InputLabel>
-                                <input type="date" name="dob" id="" />
+                                <TextField
+                                    id="dob"
+                                    name="dob"
+                                    label="Date of Birth"
+                                    type="date"
+                                    InputLabelProps={{
+                                        shrink: true,
+                                    }}                                    
+                                />
                             </FormControl>
                             <FormControl className='w-6/12'>
                                 <InputLabel id="demo-simple-select-label">Gender</InputLabel>
@@ -86,14 +93,14 @@ const SignUp: NextPage = () => {
                         </div>
                         <ReCAPTCHA
                             sitekey={process.env.GOOGLE_RECAPTCHA_SITE_KEY!}
-                            onChange={onChange} 
-                            className='mx-auto'/>                        
+                            onChange={onChange}
+                            className='mx-auto' />
                         <p className='text-center text-sm'>
                             By clicking on "Sign up", you accept the
                             <br />
                             <span className='text-blue-500'><Link href="">Terms and Conditions of Use</Link></span>.
                         </p>
-                        <button className="bg-blue-600 w-4/5 mx-auto text-white h-10 rounded-3xl">SIGN UP</button>
+                        <button className="bg-blue-600 w-4/5 mx-auto text-white h-10 rounded-3xl font-semibold">SIGN UP</button>
                         <p className='text-center text-sm'>Already have an Account? <span className='text-blue-500'><Link href="/signin">Log in</Link></span></p>
                     </form>
                 </div>

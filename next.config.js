@@ -6,7 +6,6 @@ const nextConfig = {
     apiUrl: "http://localhost:8080",
     GOOGLE_RECAPTCHA_SITE_KEY:"6Le8qJIjAAAAAFJp_uMeoAZNS-YQubvSGxgoyZka",
     GOOGLE_RECAPTCHA_SECRET:"6Le8qJIjAAAAAJZSYB_L6AUU9lx379Mx3fAtjk-G",
-
   }
 }
 

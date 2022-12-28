@@ -52,6 +52,7 @@ a {
   background-repeat: no-repeat;  
   background-position: center;
   background-size: cover;
+  background-blend-mode: lighten;
   position: fixed;
   z-index: 1;
   overflow-y: scroll;
@@ -68,6 +69,10 @@ a {
 }
 
 .blur{
+  background-color: rgba(49, 47, 47, 0.71);
+}
+
+/* .blur{
   position: fixed;
   top: 0;
   left: 0;
@@ -76,7 +81,8 @@ a {
   background-color: rgba(49, 47, 47, 0.71);
   z-index: 0;
   height: auto;
-}
+  overflow-y: scroll;
+} */
 
 .center {  
   justify-content: center;
@@ -134,14 +140,14 @@ a {
     width: 100%;    
     padding: 0 16px;
   }
-  .app_sm_even{
+  /* .app_sm_even{
     flex-direction: column;
     justify-content: space-evenly;
     gap: 16px;
     align-items: center;
     width: 100%;    
     padding: 0 16px;
-  }
+  } */
 
   .app_sm_center{
     flex-direction: column;
