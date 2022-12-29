@@ -1,9 +1,13 @@
-import secrets from './secrets.json';
+let secrets;
+if (process.env.NODE_ENV === "development") {
+  secrets = await import('./secrets.json');
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  env: JSON.parse(secrets)
+  env: process.env.NODE_ENV === "development" ? JSON.parse(secrets) : {}
 }
 
 module.exports = {
@@ -14,6 +18,7 @@ module.exports = {
     });
 
     return config;
+
   }
 };
 
