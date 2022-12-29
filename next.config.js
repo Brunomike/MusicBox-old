@@ -7,7 +7,9 @@ if (process.env.NODE_ENV === "development") {
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  env: process.env.NODE_ENV === "development" && JSON.parse(secrets) 
+  env: {
+    apiUrl:"http://localhost:2000"
+  }
 }
 
 module.exports = {
