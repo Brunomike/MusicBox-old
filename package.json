@@ -12,6 +12,7 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/material": "^5.9.0",
+    "axios": "^1.2.1",
     "next": "12.2.2",
     "node-scss": "^7.0.3",
     "react": "18.2.0",

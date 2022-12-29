@@ -1,9 +1,10 @@
 import type { NextPage } from 'next';
-import { useState } from 'react';
+import { useState, useRef, FormEvent } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { ImFacebook } from 'react-icons/im';
 import { FormControl, InputLabel, Select, MenuItem, TextField } from '@mui/material';
 import ReCAPTCHA from 'react-google-recaptcha';
+import axios from 'axios';
 
 import Head from 'next/head'
 import Link from 'next/link'
@@ -13,6 +14,7 @@ var clientId = "me"
 
 const SignUp: NextPage = () => {
     const [state, setState] = useState({});
+    const captchaRef = useRef(null)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
@@ -35,6 +37,21 @@ const SignUp: NextPage = () => {
 
     function onChange(value: any) {
         console.log("Captcha value:", value);
+    }
+
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+        const token = captchaRef?.current;
+        captchaRef.current = null;
+
+        console.log(token);
+        
+
+        await axios.post(process.env.apiUrl!, { token })
+            .then(res => console.log(res))
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     return (
@@ -61,7 +78,7 @@ const SignUp: NextPage = () => {
                         </button>
                     </div>
 
-                    <form id='signUp' className='w-4/5 mx-auto z-10 flex flex-col gap-4'>
+                    <form onSubmit={handleSubmit} id='signUp' className='w-4/5 mx-auto z-10 flex flex-col gap-4' >
                         <TextField id="outlined-basic" label="Email Address" variant="outlined" name='email' onChange={handleChange} type="email" />
                         <TextField id="outlined-basic" label="Password" variant="outlined" name='password' type="password" />
                         <TextField id="outlined-basic" label="Username" variant="outlined" name='username' type="text" />
@@ -74,7 +91,7 @@ const SignUp: NextPage = () => {
                                     type="date"
                                     InputLabelProps={{
                                         shrink: true,
-                                    }}                                    
+                                    }}
                                 />
                             </FormControl>
                             <FormControl className='w-6/12'>
@@ -84,23 +101,24 @@ const SignUp: NextPage = () => {
                                     id="demo-simple-select"
                                     label="Age"
                                 >
-                                    <MenuItem value={"male"} selected>Male</MenuItem>
-                                    <MenuItem value={"female"}>Female</MenuItem>
-                                    <MenuItem value={"other"}>Other</MenuItem>
-                                    <MenuItem value={"prefer_not_to_say"}>Prefer not to say</MenuItem>
+                                    <MenuItem value="male" selected>Male</MenuItem>
+                                    <MenuItem value="female">Female</MenuItem>
+                                    <MenuItem value="other">Other</MenuItem>
+                                    <MenuItem value="prefer_not_to_say">Prefer not to say</MenuItem>
                                 </Select>
                             </FormControl>
                         </div>
                         <ReCAPTCHA
                             sitekey={process.env.GOOGLE_RECAPTCHA_SITE_KEY!}
                             onChange={onChange}
+                            ref={captchaRef}
                             className='mx-auto' />
                         <p className='text-center text-sm'>
                             By clicking on "Sign up", you accept the
                             <br />
                             <span className='text-blue-500'><Link href="">Terms and Conditions of Use</Link></span>.
                         </p>
-                        <button className="bg-blue-600 w-4/5 mx-auto text-white h-10 rounded-3xl font-semibold">SIGN UP</button>
+                        <button type='submit' className="bg-blue-600 w-4/5 mx-auto text-white h-10 rounded-3xl font-semibold">SIGN UP</button>
                         <p className='text-center text-sm'>Already have an Account? <span className='text-blue-500'><Link href="/signin">Log in</Link></span></p>
                     </form>
                 </div>

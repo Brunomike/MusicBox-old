@@ -3,9 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   env: {
-    apiUrl: "http://localhost:8080",
-    GOOGLE_RECAPTCHA_SITE_KEY:"6Le8qJIjAAAAAFJp_uMeoAZNS-YQubvSGxgoyZka",
-    GOOGLE_RECAPTCHA_SECRET:"6Le8qJIjAAAAAJZSYB_L6AUU9lx379Mx3fAtjk-G",
+    apiUrl: "http://localhost:2000",
+    GOOGLE_RECAPTCHA_SITE_KEY:"6LeYocAZAAAAAJHssMd0OslkAv0EswCKIP8jhkA-",
+    GOOGLE_RECAPTCHA_SECRET:"6LeYocAZAAAAAOgtkOfeG0kcebVfXpOFEIOV76My",
   }
 }
 
