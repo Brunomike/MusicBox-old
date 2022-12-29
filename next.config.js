@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === "development") {
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  env: process.env.NODE_ENV === "development" ? JSON.parse(secrets) : {}
+  env: process.env.NODE_ENV === "development" && JSON.parse(secrets) 
 }
 
 module.exports = {
