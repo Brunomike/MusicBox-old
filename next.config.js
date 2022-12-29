@@ -1,6 +1,8 @@
 let secrets;
 if (process.env.NODE_ENV === "development") {
-  secrets = await import('./secrets.json');
+  secrets = require('./secrets.json');
+} else {
+  secrets = {}
 }
 
 /** @type {import('next').NextConfig} */
