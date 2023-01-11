@@ -8,7 +8,7 @@ import axios from 'axios';
 
 import Head from 'next/head'
 import Link from 'next/link'
-import Header from '../components/Header/Header'
+import Header from '../../components/Header/Header';
 
 var clientId = "me"
 
@@ -62,7 +62,7 @@ const SignUp: NextPage = () => {
             </Head>
 
             <section className='app__flex section main_background center'>
-                <Header />
+                <Header isLoggedIn={false} />
                 <div className="blur"></div>
                 <div className='card-form  flex flex-col gap-2 relative w-4/5 md:w-5/12 mx-auto mt-28 mb-20'>
                     <h1 className='text-2xl text-center bold font-bold my-2'>Ready to sign up?</h1>
@@ -109,7 +109,8 @@ const SignUp: NextPage = () => {
                             </FormControl>
                         </div>
                         <ReCAPTCHA
-                            sitekey={process.env.GOOGLE_RECAPTCHA_SITE_KEY!}
+                            //sitekey={process.env.GOOGLE_RECAPTCHA_SITE_KEY!}
+                            sitekey={"randomSiteKey"}
                             onChange={onChange}
                             ref={captchaRef}
                             className='mx-auto' />

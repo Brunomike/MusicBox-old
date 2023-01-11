@@ -7,13 +7,17 @@ import Image from 'next/image'
 import Logo from '../../assets/svg/musicbox.svg'
 import styles from './Header.module.scss'
 
-export default function Header() {
-    const [isOpen, setIsOpen] = useState(false)
+
+export default function Header({ isLoggedIn }: { isLoggedIn: boolean }) {
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleNavbar = () => {
         setIsOpen(!isOpen)
+        console.log(isOpen);
+
     }
-    return (
+
+    const ActiveHeader = isLoggedIn ?
         <header className='flex justify-around items-center bg-black h-16 absolute top-0 left-0 w-screen z-10 text-white font-bold header_sm'>
             <Link href="/">
                 <Image src={Logo} alt="Musicbox" className="hover:cursor-pointer" width={100} height={45} />
@@ -40,12 +44,11 @@ export default function Header() {
                 </ul>
             </nav>
             <div className="app__navbar-mobile">
-                <button className='w-30 h-30 rounded-full border-none outline-none' onClick={toggleNavbar}>
-                    {/* <HiMenuAlt4/> */}
-                    <Image src={MenuToggler} alt="Sidebar" />
+                <button onClick={toggleNavbar}>
+                    <Image src={MenuToggler} alt="Sidebar" width={22} height={18} />
                 </button>
                 {isOpen && (
-                    <nav className='absolute bg-white gap-8 right-0 top-0 h-screen w-10/12 text-black z-5'>
+                    <nav>
                         <button className='outline-none border-none m-4 text-lg w-35 h-35 rounded-full bg-none' onClick={toggleNavbar}><HiX /></button>
                         <ul className='w-full flex flex-col gap-5 items-center justify-center'>
                             <li className=''>
@@ -56,17 +59,62 @@ export default function Header() {
                             </li>
                             <li >
                                 <Link href="/signin">Sign In</Link>
-                                {/* <a href="#" className='inline-block px-16 py-2 border-2 border-white'>Log in</a> */}
                             </li>
                             <li >
-                            <Link href="/signup">Sign Up</Link>
-                                {/* <a href="#" className='inline-block px-16 py-2 border-2'>Sign up</a> */}
+                                <Link href="/signup">Sign Up</Link>
+                            </li>
+                        </ul>
+                    </nav>
+                )}
+            </div>
+        </header>
+        :
+        <header className={styles.header}>
+            <Link href="/" className='logo'>
+                <Image src={Logo} alt="Musicbox" width={99.51} height={45} />
+            </Link>
+            <nav className={styles['desktop']}>
+                <ul>
+                    <li>
+                        <Link href={"#"}><a href="#">Download</a></Link>
+                    </li>
+                    <li>
+                        <Link href={"#"}>Help</Link>
+                    </li>                   
+                    <li className={styles.signin}>
+                        <Link href="/auth/signin">Log in</Link>
+                    </li>
+                    <li className={styles.signup}>
+                        <Link href="/auth/signup">Sign up</Link>
+                    </li>
+                </ul>
+            </nav>
+            <div className={styles['app__navbar-mobile']}>
+                <button onClick={toggleNavbar}>
+                    <Image src={MenuToggler} alt="Sidebar" width={22} height={18} />
+                </button>
+                {isOpen && (
+                    <nav>
+                        <button className='outline-none border-none m-4 text-lg w-35 h-35 rounded-full bg-none' onClick={toggleNavbar}><HiX /></button>
+                        <ul className='w-full flex flex-col gap-5 items-center justify-center'>
+                            <li className=''>
+                                <Link href="#" >Download</Link>
+                            </li>
+                            <li>
+                                <Link href="#">Help</Link>
+                            </li>                           
+                            <li >
+                                <Link href="/signin">Sign In</Link>
+                            </li>
+                            <li >
+                                <Link href="/signup">Sign Up</Link>
                             </li>
                         </ul>
                     </nav>
                 )}
             </div>
 
-        </header>
-    )
+        </header>;
+
+    return <>{ActiveHeader}</>;
 }

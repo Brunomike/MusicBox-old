@@ -1,0 +1,171 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #000;
+  height: 84px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
+  position: relative;
+}
+.header .desktop ul {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  list-style: none;
+  font-weight: 500;
+  color: var(--white);
+}
+.header .desktop ul .signup a {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 2px solid #fff;
+}
+.header .app__navbar-mobile {
+  display: none;
+}
+.header .app__navbar-mobile button {
+  outline: none;
+  border: none;
+}
+.header .app__navbar-mobile nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 50;
+  width: 60vw;
+  height: 100vh;
+  background-color: #fff;
+  color: #000;
+  transition: all 0.5s ease-in-out;
+}
+.header .app__navbar-mobile nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-items: center;
+}
+.header .app__navbar-mobile nav ul li {
+  color: #000;
+}
+
+.signin {
+  margin-left: 32px;
+}
+.signin a {
+  width: 105px;
+  height: 36px;
+  display: inline-block;
+  padding: 2px 8px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  text-align: center;
+  transition: background-color 0.5s ease-in-out;
+}
+.signin a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.signup a {
+  width: 119px;
+  height: 36px;
+  display: inline-block;
+  padding: 2px 8px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--white);
+  color: var(--rangoonGreen);
+  text-align: center;
+  transition: background-color 0.5s ease-in-out;
+}
+.signup a:hover {
+  border: 2px solid #fff;
+  border-radius: 20px;
+  color: #fff;
+  background-color: #000;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.4rem 2rem;
+}
+
+li a.btn {
+  display: inline-block;
+  border-radius: 22px;
+}
+
+.toggleOpen {
+  border: none;
+  outline: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: none;
+}
+.toggleOpen svg {
+  font-weight: 600;
+  height: 35px;
+  margin: 0.5rem 1rem;
+  width: 35px;
+  color: #333;
+}
+
+.toggleClosed {
+  border: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.navLinksMobile {
+  position: absolute;
+  background-color: #fff;
+  gap: 8px;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 80vw;
+  z-index: 5;
+}
+.navLinksMobile ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.navLinksMobile ul li {
+  color: #000;
+}
+.navLinksMobile ul li a {
+  color: #000;
+}
+
+.toggle {
+  background-color: #fff;
+}
+.toggle a {
+  color: #fff;
+}
+
+@media screen and (max-width: 750px) {
+  .header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  .header .desktop {
+    display: none;
+  }
+  .header .app__navbar-mobile {
+    display: inline-block;
+  }
+  .navLinks {
+    display: none;
+  }
+}/*# sourceMappingURL=Header.module.css.map */

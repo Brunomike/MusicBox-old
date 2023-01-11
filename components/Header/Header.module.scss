@@ -3,14 +3,15 @@
   justify-content: space-around;
   align-items: center;
   background-color: #000;
-  height: 12vh;
+  height: 84px;
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   z-index: 1;
+  position: relative;
 
-  nav {
+  .desktop {
     ul {
       display: flex;
       gap: 16px;
@@ -18,34 +19,109 @@
       list-style: none;
       font-weight: 500;
       color: var(--white);
+
+      .signup {
+        a {
+          display: inline-block;
+          padding: 2px 8px;
+          border: 2px solid #fff;
+        }
+      }
+
     }
   }
-  .app__navbar-mobile{
 
+  .app__navbar-mobile {
+    display: none;
+    z-index: 30;
+
+    button {
+      outline: none;
+      border: none;
+    }
+
+    //className='absolute bg-white gap-8 right-0 top-0 h-screen w-10/12 text-black z-5'
+    nav {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 50;
+      width: 60vw;
+      height: 100vh;
+      background-color: #fff;
+      color: #000;
+      transition: all .5s ease-in-out;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        justify-items: center;
+
+        li {
+          color: #000;
+        }
+
+      }
+    }
   }
 }
 
-.btn{
+.signin {
+  margin-left: 32px;
+
+  a {
+    width: 105px;
+    height: 36px;
     display: inline-block;
-    padding: .4rem 2rem;
+    padding: 2px 8px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    text-align: center;
+    transition: background-color .5s ease-in-out;
+
+    &:hover {
+      background-color: #fff;
+      color: #000;
+    }
+  }
 }
-li{
-  a.btn{
+
+.signup {
+  a {
+    width: 119px;
+    height: 36px;
+    display: inline-block;
+    padding: 2px 8px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--white);
+    color: var(--rangoonGreen);
+    text-align: center;
+    transition: background-color .5s ease-in-out;
+
+    &:hover {
+      border: 2px solid #fff;
+      border-radius: 20px;
+      color: #fff;
+      background-color: #000;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: .4rem 2rem;
+}
+
+li {
+  a.btn {
     display: inline-block;
     border-radius: 22px;
   }
 }
 
-.login {
-    border: 2px solid var(--white);
-}
-
-.signup {
-  background-color: var(--white);
-  color: var(--rangoonGreen);
-}
-
-.toggleOpen{
+.toggleOpen {
   border: none;
   outline: none;
   width: 35px;
@@ -53,7 +129,7 @@ li{
   border-radius: 50%;
   background-color: none;
 
-  svg{
+  svg {
     font-weight: 600;
     height: 35px;
     margin: 0.5rem 1rem;
@@ -62,7 +138,7 @@ li{
   }
 }
 
-.toggleClosed{
+.toggleClosed {
   border: none;
   outline: none;
   width: 30px;
@@ -70,10 +146,8 @@ li{
   border-radius: 50%;
 }
 
-.app__navbar-mobile{
-  position: relative;
-}
-.navLinksMobile{
+
+.navLinksMobile {
   position: absolute;
   background-color: #fff;
   gap: 8px;
@@ -82,16 +156,17 @@ li{
   height: 100vh;
   width: 80vw;
   z-index: 5;
-  ul{
+
+  ul {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 
-    li{
+    li {
       color: #000;
 
-      a{
+      a {
         color: #000;
       }
     }
@@ -99,21 +174,31 @@ li{
 
 }
 
-.toggle{
+.toggle {
   background-color: #fff;
-  a{
+
+  a {
     color: #fff;
   }
 }
 
 @media screen and (max-width: 750px) {
-  .header{
+  .header {
     justify-content: space-between;
+    align-items: center;
     padding: 0 1rem;
+
+    .desktop {
+      display: none;
+    }
+
+    .app__navbar-mobile {
+      display: inline-block;
+    }
+
   }
-  .navLinks{
+
+  .navLinks {
     display: none;
   }
 }
-
-

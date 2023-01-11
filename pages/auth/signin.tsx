@@ -6,7 +6,7 @@ import { FormControl, InputLabel, Select, MenuItem, TextField } from '@mui/mater
 
 import Head from 'next/head'
 import Link from 'next/link'
-import Header from '../components/Header/Header'
+import Header from '../../components/Header/Header'
 
 var clientId = "me"
 
@@ -44,7 +44,7 @@ const SignIn: NextPage = () => {
       </Head>
 
       <section className='app__flex section main_background center'>
-        <Header />
+        <Header isLoggedIn={false} />
         <div className="blur"></div>
         <div className='card-form  flex flex-col gap-2 relative w-4/5 md:w-5/12 mx-auto mt-24 mb-18'>
           <h1 className='text-2xl text-center bold font-bold my-2'>What will you listen to today?</h1>
@@ -55,7 +55,7 @@ const SignIn: NextPage = () => {
             </button>
 
             <button className="w-4/5 sm:w-44 h-9 sm:h-11 flex justify-center items-center gap-3 border-2 border-black rounded-3xl cursor-pointer" onClick={signUpWithGoogle}>
-              <FcGoogle className='inline-flex' />
+              <FcGoogle className='inline-flex'  />
               <span className='inline-flex'>Google</span>
             </button>
           </div>

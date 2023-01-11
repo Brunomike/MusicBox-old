@@ -1,7 +1,7 @@
-let secrets;
-if (process.env.NODE_ENV === "development") {
-  secrets = require('./secrets.json');
-}
+// let secrets;
+// if (process.env.NODE_ENV === "development") {
+//   secrets = require('./secrets.json');
+// }
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,8 +9,8 @@ const nextConfig = {
   swcMinify: true,
   env: {
     apiUrl:"http://localhost:2000",
-    GOOGLE_RECAPTCHA_SITE_KEY:"",
-    GOOGLE_RECAPTCHA_SECRET:""
+    NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY:"some site key",
+    NEXT_PUBLIC_GOOGLE_RECAPTCHA_SECRET:""
   }
 }
 
